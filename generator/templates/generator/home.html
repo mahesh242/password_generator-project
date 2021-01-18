@@ -1,0 +1,22 @@
+{% include 'generator/base.html' %}
+{% block content %}
+    <h1>Password Generator</h1>
+    <form action="{% url 'password_generator' %}">
+        <select name="length" id="">
+            {% for i in number_list %}
+            <option value="{{i}}" {% if i == 12 %}selected="selected"{% endif %}>{{i}}</option>
+            {% endfor %}
+        </select> Length
+        <br>
+        <input type="checkbox" name="uppercase"> Uppercase
+        <br>
+        <input type="checkbox" name="number"> Number
+        <br>
+        <input type="checkbox" name="special"> Special Character
+        <br>
+        <input type="submit" value="Generate Password" class="btn btn-primary">
+    </form>
+    <br>
+    <hr>
+    <a href="{% url 'about' %}">About</a>
+{% endblock %}
