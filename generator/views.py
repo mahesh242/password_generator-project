@@ -25,3 +25,4 @@ def password(request):
     for i in range(length):
         generate_password += random.choice(characters) 
     return render(request, 'generator/password.html',{'password':generate_password})
+
